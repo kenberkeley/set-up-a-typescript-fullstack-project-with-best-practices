@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'error', // See https://softwareengineering.stackexchange.com/a/391709
     'import/no-default-export': 'error', // See https://github.com/basarat/typescript-book/blob/8c8028a/docs/tips/defaultIsBad.md
+    'import/order': 'error',
   },
 }
