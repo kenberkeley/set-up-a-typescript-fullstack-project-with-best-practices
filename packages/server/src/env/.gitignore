@@ -1,0 +1,11 @@
+##
+# Thanks to https://stackoverflow.com/a/987162/5172890
+##
+
+# Ignore everything
+*
+
+# But not these files
+!.env.example
+!.gitignore
+!index.ts
