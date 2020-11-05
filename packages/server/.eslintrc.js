@@ -20,5 +20,12 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'warn', // See https://softwareengineering.stackexchange.com/a/391709
     'import/no-default-export': 'error', // See https://github.com/basarat/typescript-book/blob/8c8028a/docs/tips/defaultIsBad.md
     'import/order': 'error',
+    'no-console': [
+      'error',
+      {
+        // Doc: https://eslint.org/docs/rules/no-console#options
+        allow: ['warn', 'error'],
+      },
+    ],
   },
 }
