@@ -1,5 +1,6 @@
 // Reference: https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
@@ -20,6 +21,12 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'warn', // See https://softwareengineering.stackexchange.com/a/391709
     'import/no-default-export': 'error', // See https://github.com/basarat/typescript-book/blob/8c8028a/docs/tips/defaultIsBad.md
     'import/order': 'error',
+    'import/no-unresolved': 'off', // Even `eslint-import-resolver-typescript` couldn't stop ESLint complaining path alias in `tsconfig.json > compilerOptions.paths`
+
+    // In accord with `tsconfig.json > compilerOptions.allowSyntheticDefaultImports=true`:
+    'import/default': 'off', // Allow `import React from 'react'` instead of `import * as React from 'react'`
+    'import/no-named-as-default-member': 'off', // Dismiss warnings like [Caution: `React` also has a named export `useState`. Check if you meant to write `import {useState} from 'react'` instead]
+
     'no-console': [
       'error',
       {

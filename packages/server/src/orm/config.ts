@@ -1,8 +1,8 @@
 import path from 'path'
 import { MikroORM } from '@mikro-orm/core'
 import { SqlHighlighter } from '@mikro-orm/sql-highlighter'
-import { envVars, dbConnectionOptions } from '../env'
 import { entityMap } from './entities'
+import { envVars, dbConnectionOptions } from '~/env'
 
 // Reference: https://github.com/driescroons/mikro-orm-graphql-example/blob/04093d1/src/orm.config.ts
 export const config: Parameters<typeof MikroORM.init>[0] = {
