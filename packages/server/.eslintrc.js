@@ -6,6 +6,9 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
+  plugins: [
+    'simple-import-sort', // Doc: https://github.com/lydell/eslint-plugin-simple-import-sort/blob/c439402/README.md#usage
+  ],
   extends: [
     'plugin:@typescript-eslint/recommended',
 
@@ -20,8 +23,15 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'warn', // See https://softwareengineering.stackexchange.com/a/391709
     'import/no-default-export': 'error', // See https://github.com/basarat/typescript-book/blob/8c8028a/docs/tips/defaultIsBad.md
-    'import/order': 'error',
     'import/no-unresolved': 'off', // Even `eslint-import-resolver-typescript` couldn't stop ESLint complaining path alias in `tsconfig.json > compilerOptions.paths`
+
+    // Sort import statements properly, reference: https://github.com/lydell/eslint-plugin-simple-import-sort/blob/c439402/README.md#example-configuration
+    'simple-import-sort/sort': 'error',
+    'sort-imports': 'off',
+    'import/order': 'off', // Does not sort the imported members within the same `{  }` group
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
 
     // In accord with `tsconfig.json > compilerOptions.allowSyntheticDefaultImports=true`:
     'import/default': 'off', // Allow `import React from 'react'` instead of `import * as React from 'react'`
