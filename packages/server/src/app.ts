@@ -7,8 +7,9 @@
 import 'reflect-metadata'
 
 import { createExpressServer } from 'routing-controllers'
-import { controllers } from './modules'
+
 import { envVars } from './env'
+import { controllers } from './modules'
 import { initOrm } from './orm'
 
 export const app = createExpressServer({

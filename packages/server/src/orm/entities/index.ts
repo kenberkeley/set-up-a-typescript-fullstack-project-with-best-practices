@@ -1,1 +1,1 @@
-export const entityMap = {}
+export const entities = []
