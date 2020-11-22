@@ -13,7 +13,7 @@ import { controllers } from './modules'
 import { initOrm } from './orm'
 
 export const app = createExpressServer({
-  classTransformer: true, // Enable `class-transform` + `class-validation`
+  classTransformer: true, // Enable `class-transform` + `class-validator`
   validation: {
     // Doc: https://github.com/typestack/routing-controllers/blob/8d11d4a/README.md#auto-validating-action-params
     // Options doc: https://github.com/typestack/class-validator/blob/f253325/README.md#passing-options
