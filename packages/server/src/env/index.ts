@@ -1,7 +1,7 @@
-import path from 'path'
-import env from 'env-var'
-import dotenvSafe from 'dotenv-safe'
 import { ConnectionOptions } from '@mikro-orm/core'
+import dotenvSafe from 'dotenv-safe'
+import env from 'env-var'
+import path from 'path'
 
 const NODE_ENV = env
   .get('NODE_ENV')
@@ -22,6 +22,7 @@ dotenvSafe.config({
 export const envVars = {
   NODE_ENV,
   PORT: env.get('PORT').required().asPortNumber(),
+  JWT_SECRET: env.get('JWT_SECRET').required().asString(),
 }
 
 export const dbConnectionOptions: ConnectionOptions = {
