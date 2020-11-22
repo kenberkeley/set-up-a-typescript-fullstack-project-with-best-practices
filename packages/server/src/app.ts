@@ -8,6 +8,11 @@ import 'reflect-metadata'
 
 import { createExpressServer } from 'routing-controllers'
 
+import {
+  authorizationChecker,
+  currentUserChecker,
+} from '~/modules/_shared/auth'
+
 import { envVars } from './env'
 import { controllers } from './modules'
 import { initOrm } from './orm'
@@ -26,6 +31,8 @@ export const app = createExpressServer({
       value: false,
     },
   },
+  authorizationChecker,
+  currentUserChecker,
   controllers,
 })
 
@@ -37,3 +44,9 @@ if (require.main === module) {
     console.log(`Server is running on port ${envVars.PORT}`)
   })
 } // else: for testing, etc
+
+/**
+ * TODO:
+ * - Rate limiting
+ * - reCAPTCHA / hCaptcha
+ */
