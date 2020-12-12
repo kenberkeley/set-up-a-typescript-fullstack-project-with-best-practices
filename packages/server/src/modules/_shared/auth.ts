@@ -9,7 +9,7 @@ import { JwtPayloadDto } from '~/modules/user/user.dto'
 
 export { Authorized, CurrentUser, JwtPayloadDto }
 
-const UNSAFE_DECODED_JWT_PAYLOAD = Symbol('jwt_payload')
+const UNSAFE_DECODED_JWT_PAYLOAD = Symbol('UNSAFE_DECODED_JWT_PAYLOAD')
 
 /**
  * TODO:
